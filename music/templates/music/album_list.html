@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>album_list</title>
+	</head>
+	<body>
+    <p><a href="{% url 'music:album_create' %}">New</a></p>
+    {% for album in album_list %}
+    <h2><a href="{% url 'music:album_update' album.pk %}">{{ album.title }}</a></h2>
+        <p>{{ album.artist }}</p>
+    {% endfor %}
+	</body>
+</html>

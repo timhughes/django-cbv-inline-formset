@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>album_form</title>
+	</head>
+	<body>
+      <form method="post" action="">
+         {% csrf_token %}
+    <table>
+      {{ form }}
+    </table>
+    <table>
+	  {{ track_formset }}
+    </table>
+    <input type="submit"/>
+    </form>
+	</body>
+</html>
