@@ -13,6 +13,7 @@ class AlbumListView(ListView):
 class AlbumCreateView(CreateView):
     model = Album
     success_url=reverse_lazy('music:album_list')
+    fields = '__all__'
 
     def get_context_data(self, **kwargs):
         context = super(AlbumCreateView, self).get_context_data(**kwargs)
@@ -37,6 +38,7 @@ class AlbumCreateView(CreateView):
 class AlbumUpdateView(UpdateView):
     model = Album
     success_url=reverse_lazy('music:album_list')
+    fields = '__all__'
 
     def get_context_data(self, **kwargs):
         context = super(AlbumUpdateView, self).get_context_data(**kwargs)

@@ -9,7 +9,7 @@ class Album(models.Model):
     title = models.CharField(max_length=100)
     artist = models.CharField(max_length=100)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 class Track(models.Model):
@@ -18,6 +18,6 @@ class Track(models.Model):
     number = models.IntegerField()
     name = models.CharField(max_length=100)
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s - %s" %( self.number, self.name)
 
