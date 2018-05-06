@@ -12,11 +12,17 @@ class Album(models.Model):
     def __str__(self):
         return self.title
 
+    def __str__(self):
+        return self.title
+
 class Track(models.Model):
 
     album = models.ForeignKey('Album')
     number = models.IntegerField()
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return "%s - %s" %( self.number, self.name)
 
     def __str__(self):
         return "%s - %s" %( self.number, self.name)
