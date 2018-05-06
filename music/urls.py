@@ -1,11 +1,11 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import *
 from .views import AlbumListView, AlbumCreateView, AlbumUpdateView
 
 
 urlpatterns = []
 
 # Album URLs
-urlpatterns += patterns('',
+urlpatterns =[
     url(
         regex='^album/$',
         view=AlbumListView.as_view(),
@@ -21,5 +21,5 @@ urlpatterns += patterns('',
         view=AlbumUpdateView.as_view(),
         name='album_update'
     ),
-)
+]
 
