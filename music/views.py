@@ -24,15 +24,15 @@ class AlbumCreateView(CreateView):
         return context
 
     def form_valid(self, form):
-        context = self.get_context_data()
+        context = self.get_context_data(form=form)
         formset = context['track_formset']
         if formset.is_valid():
-            self.object = form.save()
+            response = super().form_valid(form)
             formset.instance = self.object
             formset.save()
-            return redirect(self.success_url)
+            return response
         else:
-            return self.render_to_response(self.get_context_data(form=form))
+            return super().form_invalid(form)
 
 
 class AlbumUpdateView(UpdateView):
@@ -50,13 +50,13 @@ class AlbumUpdateView(UpdateView):
         return context
 
     def form_valid(self, form):
-        context = self.get_context_data()
+        context = self.get_context_data(form=form)
         formset = context['track_formset']
         if formset.is_valid():
-            self.object = form.save()
+            response = super().form_valid(form)
             formset.instance = self.object
             formset.save()
-            return redirect(self.success_url)
+            return response
         else:
-            return self.render_to_response(self.get_context_data(form=form))
+            return super().form_invalid(form)
 
