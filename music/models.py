@@ -16,7 +16,7 @@ class Album(models.Model):
 
 class Track(models.Model):
     id = models.BigAutoField(primary_key=True)
-    album = models.ForeignKey('Album', null=True, on_delete=models.CASCADE,)
+    album = models.ForeignKey('Album', null=False, on_delete=models.CASCADE,)
     number = models.IntegerField()
     name = models.CharField(max_length=100)
     
