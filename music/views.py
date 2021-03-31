@@ -1,5 +1,5 @@
 from django.views.generic import CreateView, ListView, UpdateView
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.shortcuts import redirect
 from .models import Album
 from .forms import TrackFormSet
